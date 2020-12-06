@@ -32,9 +32,13 @@ export class List {
         }
         const insertNode = new ListNode(data);
         if (this.size === 0) {
-            // 插入到头部
+            // 插入第一个数据
             this.head = insertNode;
             this.last = insertNode;
+        } else if (index === 0) {
+            // 插入到头部
+            insertNode.next = this.head;
+            this.head = insertNode;
         } else if (index === this.size) {
             // 插入到尾部
             this.last.next = insertNode;
