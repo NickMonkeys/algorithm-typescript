@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var list_1 = require("./list");
+var list = new list_1.List();
+list.insert(2);
+list.insert(1, 0);
+list.insert(3);
+list.insert(3);
+list.output();
+var remove = list.remove(2);
+console.log('remove:', remove);
+list.output();
