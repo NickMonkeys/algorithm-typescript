@@ -1,3 +1,7 @@
+/**
+ * 单向列表测试
+ */
+
 import { List } from "./list";
 
 const list = new List();

@@ -105,7 +105,7 @@ var List = /** @class */ (function () {
         }
         var count = 0;
         var node = this.head;
-        while (count === index) {
+        while (count < index) {
             if (!node.next)
                 return null;
             node = node.next;

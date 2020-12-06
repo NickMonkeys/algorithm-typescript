@@ -104,7 +104,7 @@ export class List {
         }
         let count = 0;
         let node: ListNode = this.head;
-        while(count === index) {
+        while(count < index) {
             if (!node.next) return null;
             node = node.next;
             count++;
