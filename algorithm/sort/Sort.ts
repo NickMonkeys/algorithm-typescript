@@ -85,4 +85,42 @@ export class Sort {
             }
         }
     }
+
+    /**
+     * 【快速排序】
+     * @param arr 
+     * @param start 
+     * @param end 
+     * @returns 
+     */
+    public static quick(arr: number[], start: number = 0, end: number = arr.length - 1) {
+        if (start >= end) {
+            return;
+        }
+
+        let pivotValue = arr[end];
+        let pivotIndex = start;
+
+        for (let i = start; i < end; i++) {
+            if (arr[i] < pivotValue) {
+                [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+                pivotIndex++;
+            }
+        }
+        
+        if (pivotIndex !== end) {
+            [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
+        }
+
+        // console.log(arr)
+        // console.log(start, pivotIndex, end);
+        // console.log('----');
+
+        if (start < pivotIndex) {
+            this.quick(arr, start, pivotIndex - 1);
+        }
+        if (pivotIndex < end) {
+            this.quick(arr, pivotIndex, end);
+        }
+    }
 }
